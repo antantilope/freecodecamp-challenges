@@ -7,6 +7,10 @@ If all letters are present in the range, return undefined.
 
 */
 
+
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+
 function fearNotLetter(str) {
     for(let i=0; i<str.length; i++) {
     
