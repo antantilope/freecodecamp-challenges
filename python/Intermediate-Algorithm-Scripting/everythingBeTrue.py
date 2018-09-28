@@ -1,4 +1,4 @@
-/*
+'''
 
 Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
 
@@ -7,16 +7,15 @@ In other words, you are given an array collection of objects. The predicate pre 
 In JavaScript, truthy values are values that translate to true when evaluated in a Boolean context.
 
 Remember, you can access object properties through either dot notation or [] notation.
+'''
 
-*/
 
-
-function truthCheck(collection, pre) {
-    for(let i in collection) {
-        if(!collection[i][pre])
-            return false;
-    }
-    return true;
-}
+# function truthCheck(collection, pre) {
+#     for(let i in collection) {
+#         if(!collection[i][pre])
+#             return false;
+#     }
+#     return true;
+# }
   
-truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+# truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
