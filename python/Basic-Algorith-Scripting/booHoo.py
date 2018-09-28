@@ -11,4 +11,4 @@ def boo_who(x):
     return isinstance(x, bool)
 
 
-booWho(None);
+booWho(None)
