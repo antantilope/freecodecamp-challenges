@@ -9,8 +9,8 @@ Boolean primitives are true and false.
 */
 
 
-function booWho(bool) {
-    return is_bool(bool);
+function booWho($bool) {
+    return is_bool($bool);
 }
 
 booWho(null);
