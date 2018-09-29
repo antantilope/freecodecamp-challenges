@@ -14,20 +14,24 @@ The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 39
 '''
 
 
-from math import pi, sqrt,
+from math import pi, sqrt, pow
 
 
 
-def doCalcOrbitalPeriod(avgAlt):
-    GM = 398600.4418
+def orbPer(objAvgAlt):
+    gm = 398600.4418
     earthRadius = 6367.4447
-    return 2*pi * sqrt((pow((earthRadius + avgAlt), 3) / GM))
+    return 2*pi * sqrt((pow((earthRadius + objAvgAlt), 3) / gm))
 
 
 def orbitalPeriod(arr):
-    return [{'name':obj['name'],
-            'orbitalPeriod': round(doCalcOrbitalPeriod(orbitalPeriod))
-            } for obj in arr]
+    return [
+        {
+            'name':obj['name'],
+            'orbitalPeriod': round(orbPer(obj['avgAlt']))
+        } for obj in arr]
 
   
-orbitalPeriod([{'name' : "sputnik", 'avgAlt' : 35873.5553}])
+data = orbitalPeriod([{'name' : "sputnik", 'avgAlt' : 35873.5553}])
+
+print(data)

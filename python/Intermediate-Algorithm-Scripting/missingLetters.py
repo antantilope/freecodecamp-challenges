@@ -7,7 +7,8 @@ If all letters are present in the range, return undefined/None.
 
 '''
 
-from string import ascii_lowercase
+
+from string import ascii_lowercase # 'abc...xyz'
 
 
 
