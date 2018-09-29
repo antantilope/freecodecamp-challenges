@@ -8,7 +8,7 @@ The provided number may not be a prime.
 
 */
 
-// TODO: too slow for large numbers
+// TODO: This is a brute force solution. It is too slow for large inputs :(
 
 function isPrime(num) {
 
