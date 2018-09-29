@@ -8,6 +8,8 @@ For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less
 
 */
 
+// TODO: This is a brute force solution. It is too slow.
+
 
 function getFibonacciValAtIX(num) {
     if (num <= 1) 
