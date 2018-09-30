@@ -15,11 +15,12 @@ function titleCase($str) {
 
 // not using ucwords
 function titleCase($str) {
+    // string to array
     $words = explode(' ', $str);
     for($i=0; $i<count($words); $i++) {
         $words[$i] = strtoupper(substr($words[$i], 0, 1)) . strtolower(substr($words[$i], 1, strlen($words[$i])));
     }
-    return implode(' ', $words);
+    return implode(' ', $words); // array back to string
 }
 
   
