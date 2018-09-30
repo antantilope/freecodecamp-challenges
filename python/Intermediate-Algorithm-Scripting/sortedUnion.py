@@ -16,8 +16,12 @@ import itertools
 
 # Better solution that uses python standard library
 def uniteUnique(*args):
-    vals = tuple(itertools.chain(*args))
-    return sorted(set(vals), key=lambda v: vals.index(v))
+
+    # tuple preserves order of args
+    vals_ordered = tuple(itertools.chain(*args))
+    
+    # Drop duplicates, cast to list, sort values by first occurance in tuple
+    return sorted(set(vals_ordered), key=lambda v: vals_ordered.index(v))
 
 
 

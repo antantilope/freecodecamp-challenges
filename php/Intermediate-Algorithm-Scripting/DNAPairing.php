@@ -1,3 +1,6 @@
+
+<?php
+
 /*
 
 The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
@@ -12,17 +15,24 @@ The character and its pair are paired up in an array, and all the arrays are gro
 
 */
 
-const pairMap = {
-    A:'T',
-    T:'A',
-    C:'G',
-    G:'C',
-}
 
-function pairElement(str) {
-    return str.split('').map(char=>{
-        return [char, pairMap[char]]
-    });
+
+function pairElement($str) {
+    $pairMap = array(
+        'A'=>'T',
+        'T'=>'A',
+        'C'=>'G',
+        'G'=>'C'
+    );
+    $ret = array();
+    foreach(str_split($str) as $char) {
+        $ret[] = array($char, $pairMap[$char]);
+    }
+    return $ret;
 }
   
 pairElement("GCG");
+
+?>
+
+

@@ -1,3 +1,5 @@
+<?php
+
 /*
 
 Fill in the object constructor with the following methods below:
@@ -13,24 +15,28 @@ These methods must be the only available means of interacting with the object.
 
 */
 
+class Persion {
+
+  function __construct($firstAndLast) {
+    $parts = explode($firstAndLast, " ");
+    $this->firstName = $parts[0];
+    $this->lastName = $parts[1];
+  }
+
+  function getFullName() {
+    return $this->firstName . ' ' . $this->lastName;
+  }
+
+  function getLastName() {
+    return $this->lastName;
+  }
+
+  function getFirstName() {
+    return $this->firstName;
+  }
+}
 
 
-var Person = function(firstAndLast) {
-    // Complete the method below and implement the others similarly
-  
-    // getters
-    this.getFullName = function() {
-      return firstAndLast;
-    };
-    this.getFirstName = function() {
-      return firstAndLast.split(' ')[0];
-    }
-    this.getLastName = function() {
-      return firstAndLast.split(' ')[1];
-    }
-    this.getFullName = function() {
-      return firstAndLast;
-    }
   
     // setters
     this.setFirstName = function(firstName){
@@ -47,9 +53,7 @@ var Person = function(firstAndLast) {
       firstAndLast = fn;
     }
   
+
   
-    return firstAndLast;
-};
-  
-var bob = new Person('Bob Ross');
-bob.getFullName();
+$bob = new Person('Bob Ross');
+$bob.getFullName();
