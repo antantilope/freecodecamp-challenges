@@ -16,8 +16,9 @@ For this challenge you will be presented with a string such as 800-692-7753 or 8
 */
 
 
-function telephoneCheck(str) {
-    return str.match(/^(1\s?)?((\(\d{3}\))|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/) != null;
+function telephoneCheck($str) {
+    $patt = "/^(1\s?)?((\(\d{3}\))|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/";
+    return preg_match($patt, $str) === 1;
 }
   
 telephoneCheck("555-555-5555");

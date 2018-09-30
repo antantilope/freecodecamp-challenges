@@ -1,3 +1,5 @@
+<?php
+
 /*
 
 Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
@@ -11,17 +13,21 @@ Check the assertion tests for examples.
 */
 
 
-function uniteUnique(arr) {
-    let ret = [];
-    Object.values(arguments).forEach((a)=>{
-        a.forEach((value)=>{
-            if(ret.indexOf(value) == -1)
-                ret.push(value);
-        });
-    });
-    return ret;
+
+
+/*
+    Note, arrays are nested inside an array and passed to uniteUnique as a single argument
+*/
+
+function uniteUnique($arr) {
+    $merged = call_user_func_array('array_merge', $arr);
+    return array_unique($merged);
 }
   
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+uniteUnique(array(
+        array(1, 3, 2), 
+        array(5, 2, 1, 4), 
+        array(2, 1)
+    ));
 
-
+?>

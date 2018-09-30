@@ -1,3 +1,5 @@
+<?php
+
 /*
 
 Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
@@ -7,12 +9,19 @@ Then return the rest of the array once the condition is satisfied, otherwise, ar
 */
 
 
-function dropElements(arr, func) {
-    for(let i=0; i<arr.length; i++) {
-        if (func(arr[i]))
-            return arr.slice(i, arr.length)
+function dropElements($arr, $func) {
+    foreach($arr as $k=>$v) {
+        if($func($v)) {
+            return array_slice($arr, $k, count($arr));
+        }
     }
-    return [];
 }
 
-dropElements([1, 2, 3], function(n) {return n < 3; });
+
+$func = function($n) {
+    return n < 3;
+};
+
+dropElements([1, 2, 3], $func);
+
+?>
