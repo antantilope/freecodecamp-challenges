@@ -1,4 +1,4 @@
-
+<?php
 /*
 
 Return a new array that transforms the elements' average altitude into their orbital periods (in seconds).
@@ -14,15 +14,24 @@ The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 39
 */
 
 
-function orbitalPeriod(arr) {
-    var GM = 398600.4418;
-    var earthRadius = 6367.4447;
-    return arr.map(o=>{
-        return {
-            name:o.name,
-            orbitalPeriod: Math.round(2*Math.PI*Math.sqrt(Math.pow(earthRadius+o.avgAlt, 3)/GM))
-        }
-    });
+function orbitalPeriod($arr) {
+    $GM = 398600.4418;
+    $earthRadius = 6367.4447;
+    $ret = array();
+    foreach($arr as $o) {
+        $ret[] = array(
+            'name'=> $o['name'],
+            'orbitalPeriod'=> round(2*pi()*sqrt(pow($earthRadius+$o['avgAlt'], 3)/$GM))
+        );
+    }
+    return $ret;
 }
   
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+orbitalPeriod(array(
+        array(
+            'name' => "sputnik", 
+            'avgAlt' => 35873.5553
+        )
+    ));
+
+?>
