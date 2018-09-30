@@ -1,3 +1,5 @@
+<?php
+
 /*
 
 Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
@@ -11,12 +13,20 @@ Remember, you can access object properties through either dot notation or [] not
 */
 
 
-function truthCheck(collection, pre) {
-    for(let i in collection) {
-        if(!collection[i][pre])
+function truthCheck($collection, $pre) {
+    foreach($collection as $elem) {
+        if(!$elem[$pre])
             return false;
     }
     return true;
 }
   
-truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+truthCheck(array(
+        array("user"=> "Tinky-Winky", "sex"=> "male"), 
+        array("user"=> "Dipsy", "sex"=> "male"), 
+        array("user"=> "Laa-Laa", "sex"=> "female"), 
+        array("user"=> "Po", "sex"=> "female")
+    ), 
+    "sex");
+
+?>
