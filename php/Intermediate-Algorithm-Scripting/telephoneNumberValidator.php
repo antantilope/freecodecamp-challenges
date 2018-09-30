@@ -1,3 +1,5 @@
+<?php
+
 /*
 
 Return true if the passed string looks like a valid US phone number.
@@ -22,3 +24,5 @@ function telephoneCheck($str) {
 }
   
 telephoneCheck("555-555-5555");
+
+?>
