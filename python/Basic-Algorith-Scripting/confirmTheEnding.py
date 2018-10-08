@@ -15,7 +15,7 @@ def confirm_ending(string, target):
 
 # Method 1- following the above rules
 def confirm_ending(string, target):
-    return target == string[len(target)*-1:]
+    return target == string[len(target) * -1:]
 
 
   
