@@ -15,7 +15,7 @@ Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has
 def getIndexToIns(arr, num):
     #   Count the number or arr elements that are less than num. 
     #   That's the index where num would fit in an array sorted small to large.
-    return sum(1 for v in arr if v<num)
+    return sum(v<num for v in arr)
 
   
 getIndexToIns([40, 60], 50)
