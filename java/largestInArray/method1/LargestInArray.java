@@ -1,4 +1,12 @@
 
+
+/*
+    Return an array consisting of the largest number from each provided sub-array.
+
+    This method only uses primative ints and arrays.
+*/
+
+
 import java.util.Arrays;
 
 class Solver {

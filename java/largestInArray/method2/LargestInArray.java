@@ -1,4 +1,12 @@
 
+
+/*
+    Return an array consisting of the largest number from each provided sub-array.
+
+    This method leverages the's Collections API as well as the List type.
+*/
+
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
