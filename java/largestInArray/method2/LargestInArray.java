@@ -24,10 +24,10 @@ class Solver {
 
     private int[] integerListToIntArray(List<Integer> listOfIntegers) {
         int listSize = listOfIntegers.size();
-        int[] ret = new int[listSize];
+        int[] intArray = new int[listSize];
         for(int i=0; i<listSize; i++)
-            ret[i] = (int) listOfIntegers.get(i);
-        return ret;
+            intArray[i] = (int) listOfIntegers.get(i);
+        return intArray;
     }
 
     private Integer maxIntArray(int[] arr) {
