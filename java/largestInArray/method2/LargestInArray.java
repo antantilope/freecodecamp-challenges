@@ -15,9 +15,9 @@ import java.util.Collections;
 
 class Solver {
 
-    private Integer[] intArrayToIntegerArray(int[] primitiveArray) {
+    private Integer[] intArrayToIntegerArray(int[] intArray) {
         // from https://www.techiedelight.com/convert-int-array-integer-array-java/
-        return Arrays.stream(primitiveArray) // IntStream
+        return Arrays.stream(intArray) // IntStream
             .boxed()                        // Stream<Integer>
             .toArray(Integer[]::new);
     }
