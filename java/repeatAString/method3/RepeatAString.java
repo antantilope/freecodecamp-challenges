@@ -3,15 +3,27 @@
 
 Repeat a given string str (first argument) for num times (second argument).
 
-This method uses regular expressions.
+This method uses char arrays
 
 */
 
+
+
+
 class Solver {
     public String repreat(String stringToRepeat, int count) {
-        // thanks https://howtodoinjava.com/java11/repeat-string-n-times/
-        char[] nullChars = new char[count];
-        return new String(nullChars).replace("\0", stringToRepeat);
+        char[] charArrayToRepreat = stringToRepeat.toCharArray();
+        int repeatStringLength = stringToRepeat.length();
+        char[] outChars = new char[repeatStringLength * count];
+        int outIndex = 0;
+        while(count-- > 0) {
+            for(int i=0; i < repeatStringLength; i++){
+                outChars[outIndex] = charArrayToRepreat[outIndex % repeatStringLength];
+                outIndex++;
+            }
+        }
+        return new String(outChars);
+
     }
 }
 
@@ -27,7 +39,5 @@ class Main {
 
         System.out.println("Repeating " +  repeatCount + "x times :" + strintToRepeat);
         System.out.println(result);
-
-        System.arraycopy(arg0, arg1, arg2, arg3, arg4);
     }
 }
