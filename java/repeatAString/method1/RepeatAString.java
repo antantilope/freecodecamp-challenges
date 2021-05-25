@@ -8,7 +8,7 @@ This method uses regular expressions.
 */
 
 class Solver {
-    public String solve(String stringToRepeat, int count) {
+    public String repreat(String stringToRepeat, int count) {
         // thanks https://howtodoinjava.com/java11/repeat-string-n-times/
         return new String(new char[count]).replace("\0", stringToRepeat);
     }
@@ -18,13 +18,13 @@ class Solver {
 class Main {
     public static void main(String[] args) {
         // Grab input data
-        String exampleString = args[0];
-        int exampleCount = Integer.parseInt(args[1]);
+        String strintToRepeat = args[0];
+        int repeatCount = Integer.parseInt(args[1]);
 
         Solver solver = new Solver();
-        String result = solver.solve(exampleString, exampleCount);
+        String result = solver.repreat(strintToRepeat, repeatCount);
 
-        System.out.println("Repeating " +  exampleCount + "x times :" + exampleString);
+        System.out.println("Repeating " +  repeatCount + "x times :" + strintToRepeat);
         System.out.println(result);
     }
 }
