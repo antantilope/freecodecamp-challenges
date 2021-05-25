@@ -10,7 +10,8 @@ This method uses regular expressions.
 class Solver {
     public String repreat(String stringToRepeat, int count) {
         // thanks https://howtodoinjava.com/java11/repeat-string-n-times/
-        return new String(new char[count]).replace("\0", stringToRepeat);
+        char[] nullChars = new char[count];
+        return new String(nullChars).replace("\0", stringToRepeat);
     }
 }
 
