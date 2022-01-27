@@ -5,6 +5,7 @@
     For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
 
     This method uses a character array.
+
 */
 
 import java.lang.Character;
