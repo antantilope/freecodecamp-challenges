@@ -8,7 +8,7 @@ class Solver
 {
     public boolean isPalendrome(String input)
     {
-
+        // Add code here
     }
 }
 

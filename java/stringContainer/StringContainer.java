@@ -23,6 +23,9 @@ class StringContainer
         return baseString.toUpperCase();
     }
 
+    public String lowerCaseIt() {
+        return baseString.toLowerCase();
+    }
 
 }
 
@@ -45,6 +48,6 @@ class Main {
         System.out.println("container 2 has string " + sc2.getBaseString());
         System.out.println("reverse is " + sc2.reverseIt());
         System.out.println("uppercase is " + sc2.upperCaseIt());
-
+        System.out.println("lowercase is " + sc2.lowerCaseIt());
     }
 }
