@@ -3,12 +3,28 @@
     Is Palondrome
 */
 
+import java.lang.StringBuffer;
+
 
 class Solver
 {
+    private String reverseString(String input)
+    {
+        return new StringBuffer(input).reverse().toString();
+    }
+
+    private boolean stringsEqual(String s1, String s2, boolean caseSensitive)
+    {
+        if (caseSensitive)
+            return s1.equals(s2);
+        else
+            return s1.toLowerCase().equals(s2.toLowerCase());
+    }
+
     public boolean isPalindrome(String input, boolean caseSensitive)
     {
-        // Add code here
+        String reversedInput = this.reverseString(input);
+        return this.stringsEqual(input, reversedInput, caseSensitive);
     }
 }
 
