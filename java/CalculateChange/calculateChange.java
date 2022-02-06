@@ -1,9 +1,27 @@
 
 
+/*
+    Task: fill in the VendingMachine::calculateReturnedChange method
+
+    Given:
+        > a vending maching makes change by returning
+            pennies, nickels, dimes, quarters, and dollar coins.
+        > the calculateReturnedChange method accepts 2 arguments
+            money owed from customers (represented as # pennies)
+            money paid from customers (represented as # pennies)
+
+            the calculateReturnedChange needs needs to create and return
+            an instance of ReturnedChange. This data will tell the vending machine
+            how many pennies, nickels, dimes, quarters, and dollar coins to return.
+
+            the machine should return the fewest number of coins possible.
+            ex: if change is 0.06, dont return 6 pennies. Return 1 nickel and 1 penny.
+*/
+
 class ReturnedChange
 {
     /* Each instance of this class represent the amount of change
-        the vending machine should return for a single transaction.
+        a vending machine should return for a single transaction.
 
         example usage: $1.41 cents in change (1 penny, 1 nickel, 1 dime, 1 quarter, 1 dollar coins)
             ReturnedChange rc = new ReturnedChange(1, 1, 1, 1, 1);
@@ -74,13 +92,13 @@ class ReturnedChange
     }
 }
 
-class ChangeCalculator
+class VendingMachine
 {
     /* Instances of this class have a calculateReturnedChange method.
         This method accepts 2 values (money owed, and money paid)
         and creates a ReturnedChange instance. The vending machine will use this
         data to issue change to the customer.
-    
+
     */
     public ReturnedChange calculateReturnedChange(int costInPennies, int paymentInPennies) {
         /* Add/Edit code below */
@@ -89,6 +107,7 @@ class ChangeCalculator
         /* Add/Edit code above */
     }
 
+    // This convenience method is only for testing the code.
     public boolean checkIfFailedAndShowResult(
         int costInPennies,
         int paymentInPennies,
@@ -127,39 +146,39 @@ class Main
 {
     public static void main(String[] args)
     {
-        ChangeCalculator cc = new ChangeCalculator();
+        VendingMachine cokeMachine = new VendingMachine();
 
         boolean testFailed;
         boolean anyFailed = false;
 
         // Test 1 // cost 1.00, paid 1.00, no change
-        ReturnedChange rc1 = cc.calculateReturnedChange(100, 100);
-        testFailed = cc.checkIfFailedAndShowResult(100, 100, rc1, ReturnedChange.NO_CHANGE);
+        ReturnedChange rc1 = cokeMachine.calculateReturnedChange(100, 100);
+        testFailed = cokeMachine.checkIfFailedAndShowResult(100, 100, rc1, ReturnedChange.NO_CHANGE);
         anyFailed = anyFailed || testFailed;
 
         // Test 2 // cost 1.00, paid 1.41, 0.41 change
-        ReturnedChange rc2 = cc.calculateReturnedChange(100, 141);
-        testFailed = cc.checkIfFailedAndShowResult(100, 141, rc2, "<CHANGE: PNY:1 NKL:1 DME:1 QTR:1 DLR:0 >");
+        ReturnedChange rc2 = cokeMachine.calculateReturnedChange(100, 141);
+        testFailed = cokeMachine.checkIfFailedAndShowResult(100, 141, rc2, "<CHANGE: PNY:1 NKL:1 DME:1 QTR:1 DLR:0 >");
         anyFailed = anyFailed || testFailed;
 
         // Test 3 // cost 1.79, paid 2.00, 0.21 change
-        ReturnedChange rc3 = cc.calculateReturnedChange(179, 200);
-        testFailed = cc.checkIfFailedAndShowResult(179, 200, rc3, "<CHANGE: PNY:1 NKL:0 DME:2 QTR:0 DLR:0 >");
+        ReturnedChange rc3 = cokeMachine.calculateReturnedChange(179, 200);
+        testFailed = cokeMachine.checkIfFailedAndShowResult(179, 200, rc3, "<CHANGE: PNY:1 NKL:0 DME:2 QTR:0 DLR:0 >");
         anyFailed = anyFailed || testFailed;
 
         // Test 4 // cost 1.99, paid 2.00, 0.01 change
-        ReturnedChange rc4 = cc.calculateReturnedChange(199, 200);
-        testFailed = cc.checkIfFailedAndShowResult(199, 200, rc4, "<CHANGE: PNY:1 NKL:0 DME:0 QTR:0 DLR:0 >");
+        ReturnedChange rc4 = cokeMachine.calculateReturnedChange(199, 200);
+        testFailed = cokeMachine.checkIfFailedAndShowResult(199, 200, rc4, "<CHANGE: PNY:1 NKL:0 DME:0 QTR:0 DLR:0 >");
         anyFailed = anyFailed || testFailed;
 
         // Test 5 // cost 4.59, paid 5.00, 0.41 change
-        ReturnedChange rc5 = cc.calculateReturnedChange(459, 500);
-        testFailed = cc.checkIfFailedAndShowResult(459, 500, rc5, "<CHANGE: PNY:1 NKL:1 DME:1 QTR:1 DLR:0 >");
+        ReturnedChange rc5 = cokeMachine.calculateReturnedChange(459, 500);
+        testFailed = cokeMachine.checkIfFailedAndShowResult(459, 500, rc5, "<CHANGE: PNY:1 NKL:1 DME:1 QTR:1 DLR:0 >");
         anyFailed = anyFailed || testFailed;
 
         // Test 6 // cost 14.21, paid 20.00, 5.79 change
-        ReturnedChange rc6 = cc.calculateReturnedChange(1421, 2000);
-        testFailed = cc.checkIfFailedAndShowResult(1421, 2000, rc6, "<CHANGE: PNY:4 NKL:0 DME:0 QTR:3 DLR:5 >");
+        ReturnedChange rc6 = cokeMachine.calculateReturnedChange(1421, 2000);
+        testFailed = cokeMachine.checkIfFailedAndShowResult(1421, 2000, rc6, "<CHANGE: PNY:4 NKL:0 DME:0 QTR:3 DLR:5 >");
         anyFailed = anyFailed || testFailed;
 
         // End of tests.
