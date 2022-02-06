@@ -2,11 +2,11 @@
 
 class ReturnedChange
 {
-    /* Instances represent the amount of change
-        the vending machine should return.
+    /* Each instance of this class represent the amount of change
+        the vending machine should return for a single transaction.
 
-        example usage: 41 cents in change (1 penny, 1 nickel, 1 dime, 1 quarter, 0 dollar coins)
-            ReturnedChange rc = new ReturnedChange(1, 1, 1, 1, 0);
+        example usage: $1.41 cents in change (1 penny, 1 nickel, 1 dime, 1 quarter, 1 dollar coins)
+            ReturnedChange rc = new ReturnedChange(1, 1, 1, 1, 1);
 
             :no change returned:
                 ReturnedChange rc = new ReturnedChange(0, 0, 0, 0, 0);
@@ -76,6 +76,12 @@ class ReturnedChange
 
 class ChangeCalculator
 {
+    /* Instances of this class have a calculateReturnedChange method.
+        This method accepts 2 values (money owed, and money paid)
+        and creates a ReturnedChange instance. The vending machine will use this
+        data to issue change to the customer.
+    
+    */
     public ReturnedChange calculateReturnedChange(int costInPennies, int paymentInPennies) {
         /* Add/Edit code below */
 
