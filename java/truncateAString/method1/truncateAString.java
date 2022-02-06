@@ -4,6 +4,7 @@
     Given a string and a maximum string length, truncate the string
         if the string length is over the max, trim the string and add "..." to the end of it
         if the string lenght is NOT over the max, return the original string.
+        if the string is empty, return an empty string
 
         example
             string: "helloworld!"
@@ -45,10 +46,11 @@ class Main {
 
     public static void main(String[] args) {
         // Create inputs and expected outputs
-        String[][] inputsAndExpectedOuts = {
+        String[][] inputsAndExpectedOutputs = {
             {"foooooobaaaaaaar", "15", "foooooobaaaaaaa..." },
             {"hello world", "11", "hello world" },
             {"hello world", "10", "hello worl..." },
+            {"", "10", "" },
             {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
                 "12",
@@ -58,7 +60,7 @@ class Main {
 
         boolean anyFailed = false;
         Solver x = new Solver();
-        for(String[] testValues: inputsAndExpectedOuts) {
+        for(String[] testValues: inputsAndExpectedOutputs) {
             String testInputString = testValues[0];
             int testInputMaxLength = Integer.parseInt(testValues[1]);
             String actualOut = x.truncateString(testInputString, testInputMaxLength);
