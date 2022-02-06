@@ -11,7 +11,13 @@
 
 class Solver {
     public String titleCase(String input) {
-
+        String[] words = input.split(" ");
+        for(int i = 0; i < words.length; i++) {
+            String upperCasedPart = words[i].substring(0, 1).toUpperCase();
+            String lowerCasedPart = words[i].substring(1).toLowerCase();
+            words[i] = upperCasedPart + lowerCasedPart;
+        }
+        return String.join(" ", words);
     }
 }
 
