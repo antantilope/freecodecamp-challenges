@@ -18,11 +18,7 @@
 
 class Solver {
     public String truncateString(String stringToTruncate, int maxLength) {
-        /* Add code below */
 
-        /* Add code above */
-
-        return ""; // Remove this line of code.
     }
 
     public boolean getAndShowResult(String input, String actual, String expected) {
