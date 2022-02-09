@@ -1,4 +1,6 @@
 
+import java.lang.Math;
+
 /*
 
     Given a string and a maximum string length, truncate the string
@@ -18,7 +20,10 @@
 
 class Solver {
     public String truncateString(String stringToTruncate, int maxLength) {
-
+        return (
+          stringToTruncate.substring(0, Math.min(maxLength, stringToTruncate.length()))
+          + (stringToTruncate.length() > maxLength ? "..." : "")
+        );
     }
 
     public boolean getAndShowResult(String input, String actual, String expected) {
