@@ -101,10 +101,61 @@ class VendingMachine
 
     */
     public ReturnedChange calculateReturnedChange(int costInPennies, int paymentInPennies) {
-        /* Add/Edit code below */
 
-        return new ReturnedChange();
-        /* Add/Edit code above */
+      int totalChangeInPennies = paymentInPennies - costInPennies;
+      if(totalChangeInPennies <= 0)
+        return new ReturnedChange(); // No change to return.
+
+      // Number of each coin to return to the customer.
+      int returnPennyCount = 0;
+      int returnNickelCount = 0;
+      int returnDimeCount = 0;
+      int returnQuarterCount = 0;
+      int returnDollarCount = 0;
+
+      // Amount (as pennies) returned to the customer (so far)
+      int returnedTotal = 0;
+
+      // Total amount (as pennies) left to return to the customer
+      int remainingToReturn;
+
+      while(returnedTotal < totalChangeInPennies)
+      {
+        remainingToReturn = totalChangeInPennies - returnedTotal;
+
+        if(remainingToReturn >= 100) {
+          returnedTotal += 100;
+          returnDollarCount++;
+          continue;
+        }
+        if(remainingToReturn >= 25) {
+          returnedTotal += 25;
+          returnQuarterCount++;
+          continue;
+        }
+        if(remainingToReturn >= 10) {
+          returnedTotal += 10;
+          returnDimeCount++;
+          continue;
+        }
+        if(remainingToReturn >= 5) {
+          returnedTotal += 5;
+          returnNickelCount++;
+          continue;
+        }
+        if(remainingToReturn >= 1) {
+          returnedTotal += 1;
+          returnPennyCount++;
+          continue;
+        }
+      }
+      return new ReturnedChange(
+        returnPennyCount,
+        returnNickelCount,
+        returnDimeCount,
+        returnQuarterCount,
+        returnDollarCount
+      );
     }
 
     // This convenience method is only for testing the code.
