@@ -9,8 +9,24 @@ class ShortestWordFinder
 {
     String find(String sentence)
     {
-        // fill in this method
-        return "";
+        String [] words = sentence.split(" ");
+        if(words.length <= 0)
+        {
+            return "";
+        }
+        String shortestWord = words[0];
+        for(int i = 1; i < words.length; i++)
+        {
+            if(words[i].length() < shortestWord.length())
+            {
+                shortestWord = words [i];
+            }
+            else if(words[i].length() == shortestWord.length())
+            {
+                return "";
+            }
+        }
+        return shortestWord;
     }
 }
 
@@ -40,6 +56,7 @@ class Main
             {"hello world", ""}, // Tie
             {"wizards of waverly place", "of"},
             {"aaa aaaa aa a aaa", "a"},
+            {"cat fart dog f", "f"},
             {"reddit facebook AT&T yahoo", "AT&T"},
         };
         boolean anyFailed = false;
