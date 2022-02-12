@@ -61,6 +61,7 @@ class Main
             {"hello world", ""}, // Tie
             {"wizards of waverly place", "of"},
             {"aaa aaaa aa a aaa", "a"},
+            {"cat fart dog f", "f"},
             {"reddit facebook AT&T yahoo", "AT&T"},
         };
         boolean anyFailed = false;
