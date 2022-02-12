@@ -18,14 +18,15 @@ class ShortestWordFinder
             return words[0];
 
         // Build index -> length pairs
-        int[][] metaData = new int[words.length][2];
-        for(int i =0; i< words.length; i++) {
-            metaData[i][0] = i;
-            metaData[i][1] = words[i].length();
-        }
-
         final int INDEX_IX = 0;
         final int LENGTH_IX = 1;
+        int[][] metaData = new int[words.length][2];
+        for(int i =0; i< words.length; i++) {
+            metaData[i][INDEX_IX] = i;
+            metaData[i][LENGTH_IX] = words[i].length();
+        }
+
+
         Arrays.sort(metaData, Comparator.comparingInt(o -> o[LENGTH_IX]));
 
         // Compare first and second
