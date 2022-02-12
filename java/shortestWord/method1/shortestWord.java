@@ -4,16 +4,37 @@
     find and return the shortest word
     If it's a tie, return an empty string
 */
+import java.util.Arrays;
+import java.util.Comparator;
 
 class ShortestWordFinder
 {
     String find(String sentence)
-    {
-        // fill in this method
-        return "";
+    {   // Handle edge cases
+        if(sentence.length() == 0)
+            return "";
+        String [] words = sentence.split(" ");
+        if(words.length == 1)
+            return words[0];
+
+        // Build index -> length pairs
+        int[][] metaData = new int[words.length][2];
+        for(int i =0; i< words.length; i++) {
+            metaData[i][0] = i;
+            metaData[i][1] = words[i].length();
+        }
+
+        final int INDEX_IX = 0;
+        final int LENGTH_IX = 1;
+        Arrays.sort(metaData, Comparator.comparingInt(o -> o[LENGTH_IX]));
+
+        // Compare first and second
+        if(metaData[0][LENGTH_IX] == metaData[1][LENGTH_IX])
+            return ""; // Tied
+        else
+            return words[metaData[0][INDEX_IX]];
     }
 }
-
 
 class Main
 {
