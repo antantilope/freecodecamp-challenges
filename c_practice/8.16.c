@@ -99,10 +99,8 @@ int main()
         word2_letter_counts[*c - 'a']++;
 
     bool are_anagrams = strlen(word1) == strlen(word2);
-    for(uint32_t i = 0; are_anagrams && i < 26; i++) {
-        if(word1_letter_counts[i] != word2_letter_counts[i])
-            are_anagrams = false;
-    }
+    for(uint32_t i = 0; are_anagrams && i < 26; i++)
+        are_anagrams = word1_letter_counts[i] == word2_letter_counts[i];
 
     printf(
         are_anagrams
