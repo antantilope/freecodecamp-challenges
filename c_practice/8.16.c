@@ -77,6 +77,8 @@ int main()
         goto exit_program;
     }
 
+
+    // convert to lowercase, reject if not a->z/A->Z letters
     if(!to_lowercase(word1)){
         fprintf(stderr, "Error: word1 must be a->z letters\n");
         exit_code = 1;
