@@ -22,7 +22,7 @@ char* read_line_from_stdin()
 {
     // this function mimics POSIX getline, should be portable...
 
-    /* Pull chars from stdin until a newline is found or the buffer is full.
+    /* Pull chars from stdin until a newline is found
        Returns dynamically allocated buffer containing the line read from stdin.
        This buffer must be freed by the caller.
     */
