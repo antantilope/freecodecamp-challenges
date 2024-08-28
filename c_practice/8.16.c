@@ -50,7 +50,7 @@ char* read_line_from_stdin()
     }
 }
 
-bool to_lowercase(char *c) {
+bool sanitize(char *c) {
     for(char *ptr = c; *ptr; ptr++) {
         if(*ptr >= 'A' && *ptr <= 'Z')
             *ptr += 32; // convert to lowercase
@@ -79,12 +79,12 @@ int main()
 
 
     // convert to lowercase, reject if not a->z/A->Z letters
-    if(!to_lowercase(word1)){
+    if(!sanitize(word1)){
         fprintf(stderr, "Error: word1 must be a->z letters\n");
         exit_code = 1;
         goto exit_program;
     }
-    if(!to_lowercase(word2)){
+    if(!sanitize(word2)){
         fprintf(stderr, "Error: word2 must be a->z letters\n");
         exit_code = 1;
         goto exit_program;
