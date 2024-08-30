@@ -32,7 +32,7 @@ bool read_line_from_stdin(char *buffer, uint32_t size)
     */
     uint32_t ix = 0;
     char c;
-    while(ix < size) {
+    while(ix < size - 1) {
         if ((c = getchar()) == '\n') 
             return buffer[ix] = '\0', true;
         buffer[ix++] = c;
