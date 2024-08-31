@@ -35,7 +35,7 @@ char* read_line_from_stdin()
     uint32_t ix = 0;
     char c;
     while(true) {
-        if(ix == buff_size) {
+        if(ix == buff_size - 2) {
             buff_size *= 2;
             if(buff_size >= 0xFFFFFFFF) return NULL;
 
